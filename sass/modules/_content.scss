@@ -1,0 +1,182 @@
+/*
+ ==========================================================================
+  $Content
+ ==========================================================================
+ */
+
+
+/* Views Exposed Filters
+   ===================================================================== */
+
+//  Toggle Button
+.js-filters-toggle {
+    background-color:$gray;
+    display:inline-block;
+    margin-bottom: 10px;
+    padding:5px 20px;
+    border-radius: 20px;
+    font-size:12px;
+    font-weight: bold;
+}
+
+.view-filters {
+
+    display: none;
+    &.js-filter-open {
+        display: block;
+    }
+
+    background-color: $gray;
+    padding:10px;
+    border: 1px solid $black;
+    margin-bottom: 15px;
+
+    // labels
+    label {
+        font-weight: normal;
+        font-size: .8em;
+    }
+
+    // Input Text
+    input[type="text"] {
+        width: 100%;
+    }
+}
+
+
+/* Views Tables
+   ===================================================================== */
+
+// Responsive Table
+.js-responsive-table {
+    min-height: .01%;
+    overflow-x: auto;
+}
+
+table.views-table {
+    border: 5px solid #CCCCCC;
+    margin: 0;  
+
+    tr:hover {
+        background-color: $gray!important;
+    }
+    th {
+        @include remFallback(font-size, 1.2);
+        background-color: $gray;
+        white-space: nowrap;
+    }
+
+    td.active {
+        background-color: $gray;
+        font-weight: bold;
+    }
+
+    // Dates
+    .views-field-created,
+    .views-field-field-project-deadline,
+    .views-field-changed {
+        div[class^="date-"] {
+            white-space: nowrap;
+        }
+    }
+    
+    // Buttons
+    .views-field-delete-node a {
+        @extend %block;
+        @include remFallback(font-size, 1.6);
+        text-decoration: none;
+        background-color: $gray;
+        padding: 3px;
+        @include border-radius(20px);
+        border: 1px solid #cccccc;
+        text-align: center;
+        + a {
+            margin-top: 7px;
+        }
+        &:hover {
+            background-color:darken($gray, 15%);
+        }
+    } 
+}
+
+/* Field Group Table
+   ===================================================================== */
+
+.field-group-table {
+    .form-item {
+        margin: 10px 0;
+        @include remFallback(font-size, 1.5);
+    }
+    table {
+        border: 5px solid #CCCCCC;
+        margin: 0;
+    }
+    th {
+        width: 30%;
+        background-color: $gray;
+    }
+}
+
+/* Attached Files
+   ===================================================================== */
+
+.field-type-file {
+    position: relative;
+    padding-left: 25px;
+    img {
+        position: absolute;
+        left: 0;
+        top: 5px;
+    }
+}
+
+/* Dowload Attached Files
+   ===================================================================== */
+
+th[class$="-download"],
+td[class$="-download"] {
+    vertical-align: middle;
+    text-align: center;
+     a {
+        @include icoMoon("arrow-circle-down", "before", true);
+        text-decoration: none;
+        &:before {
+            font-size: 20px;
+        }
+    }
+}
+
+/* Nodes
+   ===================================================================== */
+
+.field-type-download-link a {
+    @include icoMoon("arrow-circle-down");
+}
+
+// Break long link lables
+.field-type-link-field a,
+.field-type-file a {
+    word-break: break-all;
+}
+
+// Notes
+.field-name-field-project-note {
+        padding-bottom: 10px;
+    ~ div {
+        padding-top: 10px;
+        border-top: 1px solid #CCCCCC;
+    }
+    h2 {
+        margin: 0;
+        @include remFallback(font-size, 2); 
+    }   
+}
+
+/* Add Node
+   ===================================================================== */
+.page-node-add form.node-form {
+    input[type="text"],
+    input[type="file"] {
+        width: 100%!important;
+    }
+}

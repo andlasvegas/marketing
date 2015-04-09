@@ -1,0 +1,56 @@
+/*
+ ==========================================================================
+  $Layout
+ ==========================================================================
+ */
+
+// Global Defaults
+$susy: (
+	flow: ltr, 							// rtl | ltr
+	math: fluid, 						// fluid | static
+	output: float,						// float | isolate
+	container: 120em,					// <length> | auto
+	container-position: center,			// left | center | right | <length> [*2]
+	columns: 12,						// <number> | <list>
+	gutters: .25,						// <ratio>
+	column-width: false,				// <length> | false/null
+	gutter-position: split,				// before | after | split | inside | inside-static
+	global-box-sizing: content-box,		// border-box | content-box
+	last-flow: to,						// from | to
+	debug: (
+		image: hide,            		// show | hide | show-columns | show-baseline
+		output: background,             // background | overlay
+		toggle: top right,              // right | left and top | bottom
+		color: rgba(#66f, .25),         // <color>
+	)
+);
+
+// Change Border Box Model
+@include border-box-sizing;
+
+// Set Container Max Width
+.container {
+	@include container;
+}
+
+#wrapper > .container {
+	padding: 20px;
+}
+
+#page.content-sidebar {
+	@include MQ(M) {
+		#main-content {
+			@include span(9);
+		}
+		#sidebar {
+			@include span(3);
+		}
+	}
+}
+
+
+/* Node
+   ===================================================================== */
+body.page-node #wrapper > .container {
+	@include container(1000px);
+}

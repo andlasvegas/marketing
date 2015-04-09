@@ -1,0 +1,55 @@
+/*
+ ==========================================================================
+  $Variables
+ ==========================================================================
+ */
+
+//Color Palette
+$blue 							: #235796;
+$blueLight 						: #009AD8;
+$blueDark 						: #061352;
+$red                			: #FF0000;
+$black              			: #000000;
+$white              			: #FFFFFF;
+$yellow							: #FFFF00;
+$gray 							: #eeeeee;
+
+// Priority
+$priority3						: $red;
+$priority2						: #f27624;
+$priority1						: #f7a939;
+
+// Brand Colors
+$brandPrimary 					: $blue;
+$brandSecondary 				: $blueLight;
+$brandTertiary					: $blueDark;
+$brandQuaternary				: $black;
+
+//Atmoshpere Colors
+$backgroundColor    			: $white;
+$colorType          			: $black;
+$colorHeadings      			: $black;
+
+// Vertical Rhythm
+$base-font-size 				: 10px;
+$base-line-height 				: 16px;
+$round-to-nearest-half-line		: true;
+
+// Imported Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800);
+
+// Typography
+$fontFamily         			: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fontFamilyCode					: 'Lucida Console', Monaco, monospace;
+$thin               			: 300;
+$normal             			: 400;
+$bold               			: 700;
+$heavy              			: 800;
+
+// Breakpoints
+$XXS            				: 280px;
+$XS             				: 480px;
+$S              				: 600px;
+$M              				: 768px;
+$L              				: 1000px;
+$XL             				: 1200px;

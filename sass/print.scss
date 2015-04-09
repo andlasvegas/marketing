@@ -1,0 +1,121 @@
+ /*
+ ==========================================================================
+  $Print
+  http://css-tricks.com/css-tricks-finally-gets-a-print-stylesheet/
+ ==========================================================================
+ */
+
+@import "variables";
+@import "mixins";
+@import "partials/normalize";
+
+@media print {
+
+	// Make the type as readable as possible
+	body {
+		font-family: helvetica, arial, serif;
+		background: none;
+		color: black;
+	}
+
+	// Use as much of the page as possible
+	#page {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		background: none;
+	}
+
+	// Remove the extra stuff
+	#navigation,
+	#mobile-nav,
+	.mobile-nav-controls,
+	#viewport-width,
+	#sidebar,
+	#footer,
+	ul.tabs,
+	.views-field-nothing,
+	.views-field-edit-node,
+	#block-system-user-menu,
+	.view-filters,
+	.views-field-delete-node,
+	.views-field-field-project-files-download,
+	#block-devel-switch-user {
+		display: none;
+	}
+
+	// Display the URLs in the body content
+	#main a:after {
+		// content: " [" attr(href) "] ";
+	}
+
+	a {
+		text-decoration: none;
+		color: $black;
+	}
+
+	// header
+	#header-wrapper {
+		display: table;
+		#site-logo,
+		#site-slogan {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		#site-logo {
+			width: 150px;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		#site-slogan {
+			width: 200px;
+		}
+	}
+	
+	// Tables
+	table {
+		width: 100%;
+		border: 5px solid #CCCCCC;
+		page-break-inside:auto;
+		tr + tr {
+			border-top: 1px solid #CCCCCC;
+		}
+		tr {
+			page-break-inside:avoid;
+			page-break-after:auto;
+		}
+		th {
+			background-color: $gray;
+			font-weight: normal;
+			font-size: 10px;
+		}
+		th, td {
+			border: none;
+			padding: 5px;
+		}
+		td {
+			background-color: $white;
+		}
+	}
+
+	// Project Node
+	.field-group-format {
+		th {
+			width: 25%;
+		}
+	}
+	
+	// Project ID
+	.field-name-field-project-id {
+		display: inline-block;
+		> div {
+			display: inline-block;
+			padding-right: 3px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	}
+
+}

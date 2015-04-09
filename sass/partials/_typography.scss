@@ -1,0 +1,38 @@
+/*
+ ==========================================================================
+  $Typography
+ ==========================================================================
+ */
+
+@include establish-baseline;
+
+body {
+    @include remFallback(font-size, 1.6);
+    line-height: 1.5;
+	font-family: $fontFamily;
+	color: $colorType;
+}
+
+#{headings()} {
+	font-family: $fontFamily;
+	font-weight: $bold;
+	line-height: 1.5;
+	color: $colorHeadings;
+	@include remFallback(margin, 1.5, 0);
+}
+
+#page-title {
+	margin-top: 0;
+	text-transform: capitalize;
+}
+
+h1 { @include remFallback(font-size, 3); }
+h2 { @include remFallback(font-size, 2.4); }
+h3 { @include remFallback(font-size, 2.2); }
+h4 { @include remFallback(font-size, 2); }
+h5 { @include remFallback(font-size, 1.8); }
+h6 { @include remFallback(font-size, 1.6); }
+
+strong {
+  font-weight: $bold;
+}

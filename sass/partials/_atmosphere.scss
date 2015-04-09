@@ -1,0 +1,16 @@
+/*
+ ==========================================================================
+  $Atmoshpere
+ ==========================================================================
+ */
+
+
+body {
+  background: $backgroundColor;
+}
+
+// Selections
+@include selection {
+    background: lighten($brandPrimary, 55%);
+    text-shadow: none;
+}

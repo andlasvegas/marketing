@@ -1,0 +1,109 @@
+/*
+ ==========================================================================
+  $Project & Production
+ ==========================================================================
+ */
+
+/* Views Exposed Filters
+   ===================================================================== */
+
+.view-projects .views-exposed-form,
+.view-production .views-exposed-form {
+	
+	@include breakpoint(max-width 1499px) {
+		@include container(1000px);
+	}
+
+	// labels
+	div[class^="js-filter"] {
+		@extend %clearFix;
+		@include breakpoint(1500px) {
+			width: auto;
+			margin: 0;
+		}		
+		> div {
+			padding:0 10px;
+		} 
+	}
+
+	// Text Fields
+	.js-filter-text {
+		> div {
+			float: none;
+		}
+		@include breakpoint(800px) {
+			@include span(5);
+		}
+		@include breakpoint(1500px) {
+			> div {
+				float: left;
+			}
+			input {
+				width: 200px;
+			}
+		}
+	}
+	
+	// Select Lists
+	.js-filter-select {
+		@include breakpoint(800px) {
+			@include span(7);
+		}
+		@include breakpoint(1000px) {
+			@include span(6);
+		}
+		@include breakpoint(max-width 1499px) {
+			max-width: 430px;
+		}
+	}
+	
+	// Buttons
+	.js-filter-btns {
+		> div {
+			float: none;
+			display: inline-block;
+		}
+		input {
+			margin:20px 5px 0!important;
+		}
+		@include breakpoint(max-width 999px) {
+			clear: left;
+			text-align: center;
+		}
+		@include breakpoint(1000px) {
+			@include span(1);
+		}
+	}
+}
+
+/* Views Table
+   ===================================================================== */
+
+.view-projects .views-table,
+.view-production .views-table {
+
+	// Project Name
+	.views-field-view-node {
+		@include MQ(Smax) {
+			min-width: 200px;
+		}
+		width:35%;
+	}
+	
+	// Priority
+	.project-priority-3 td[class*="priority"] {
+		background-color:$priority3!important;
+		color: $white;
+		font-weight: bold;
+	}		
+	.project-priority-2 td[class*="priority"]  {
+		background-color:$priority2!important;
+		color: $white;
+		font-weight: bold;
+	}		
+	.project-priority-1 td[class*="priority"]  {
+		background-color:$priority1!important;
+		color: $white;
+		font-weight: bold;
+	}		
+}

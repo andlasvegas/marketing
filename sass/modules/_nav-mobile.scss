@@ -1,0 +1,241 @@
+/*
+ ==========================================================================
+  $Navigation Mobile
+ ==========================================================================
+ */
+
+/* Config
+   ===================================================================== */
+
+$mobileNavPos			: right;
+$mobileNavAnim			: #{$mobileNavPos} .5s ease;
+$mobileNavBgndColor		: $brandPrimary;
+$mobileNavBtnSize		: 50px;
+$mobileNavFontSize		: 2;
+$mobileNavExpandBtn		: 35px;
+
+/* Layout
+   ===================================================================== */
+
+#wrapper {
+	position: relative;
+}
+
+#mobile-nav,
+.mobile-nav-controls {
+	display: none;
+}
+
+@include MQ(Smax) {
+	#mobile-nav,
+	.mobile-nav-controls {
+		display: block;
+	}
+
+	// Open Menu
+	html.js-nav-open {
+
+		// Wrapper
+		#wrapper {
+			display: none;
+		}
+
+		// Menu
+		#mobile-nav {
+			display: block;
+		}
+	}
+}
+
+// Mobile Controls Wrapper
+.mobile-nav-controls {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+}
+
+// Mobile Toggle Button Icons
+.mobile-nav-toggle {
+	position: absolute;
+	top: 0;
+	#{$mobileNavPos}: 0;
+	z-index: 10;
+}
+
+// Menu
+#mobile-nav {
+	display: none;
+	.content {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			list-style-type: none;
+		}
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			list-style-type: none;
+		}
+		a,
+		.nolink {
+			@extend %block;
+			@extend %unstyledLink;
+		}
+	}
+}
+
+/* Presentation
+   ===================================================================== */
+
+@include MQ(Smax) {
+
+	// Background Color
+	html.js-nav-open body {
+		background-color: $mobileNavBgndColor;
+	}
+}
+
+// Menu Header 
+.js-mobile-nav-header {
+	position: relative;
+	padding: 170px 20px 10px;
+	background-image: url(/sites/default/files/logo/las-vegas-chamber-commerce/lvmcc-white.svg);
+	background-size: 150px 150px;
+	background-position: center 20px;
+	background-repeat: no-repeat;
+
+	// Slogan
+	.js-menu-slogan {
+		text-align:center;
+		color: $white;
+		margin: 0;
+		font-size: 18px;
+	}
+	// Close
+	.js-menu-close {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		right: 0;
+		display: block;
+		padding: 20px;
+		@include icoMoon(times-circle);
+		&:before {
+			color: $white;
+			font-size: 30px;
+		}
+	}
+}
+
+// Mobile Toggle Button Icons
+.mobile-nav-toggle {
+	font-size: 0;
+	color: $black;
+	line-height: 0;
+	.js-nav-open & {
+		// color: $white;
+	}
+	@include icoMoon('navicon');
+	&:before {
+		width: $mobileNavBtnSize;
+		font-size: $mobileNavBtnSize*.8;
+		line-height: $mobileNavBtnSize;
+		text-align: center;
+	}
+}
+
+// Expanded Menu Icon
+.js-expanded-wrapper {
+	position: relative;
+	*:first-child {
+		padding-right: 3.125em;
+	}
+	.js-expanded-btn {
+		position: absolute;
+		top: 50%;
+		right: 5px;
+		display: block;
+		width: $mobileNavExpandBtn;
+		margin-top: ceil($mobileNavExpandBtn/2) * -1;
+		line-height: $mobileNavExpandBtn;
+		text-align: center;
+		@include icoMoon('chevron-down', after) {
+			display: inherit;
+			line-height: inherit;
+			@include transition(all .5s ease);
+			color: $white;
+		}
+	}
+}
+.js-expanded-open > .js-expanded-wrapper .js-expanded-btn:after {
+	@include rotate(180deg);
+}
+
+// Menu
+#mobile-nav .content {
+	padding: 0 20px 20px;
+
+	ul.menu li {
+		@include remFallback(font-size, $mobileNavFontSize);
+		line-height: 1.25;
+
+		a,
+		.nolink {
+			padding: .625em;
+			color: $white;
+		}
+		> ul.menu {
+			max-height: 0;
+			overflow: hidden;
+		}
+		&.js-expanded-open > ul.menu {
+			max-height: 140em;
+		}
+
+		// Add Project Link
+		&.add-project {
+			border: none;
+			a {
+				@include addProject;
+			}
+		}
+	}
+
+	ul.js-menu-level-0 {
+		background-color: darken($mobileNavBgndColor, 20%);
+		> li > *:first-child {
+			border-top: 1px solid darken($mobileNavBgndColor, 10%);
+		}
+	}
+
+	ul.js-menu-level-1 {
+		background-color: darken($mobileNavBgndColor, 10%);
+		> li > *:first-child {
+			border-top: 1px solid darken($mobileNavBgndColor, 20%);
+		}
+	}
+
+	ul.js-menu-level-2 {
+		background-color: lighten($mobileNavBgndColor, 40%);
+		> li > a,
+		.view-content a {
+			color: $black;
+			border-top: 1px solid darken($mobileNavBgndColor, 20%);
+		}
+	}
+
+	// User Menu
+	> ul + ul {
+		margin-top: 20px;
+		background-color: lighten($mobileNavBgndColor, 20%);
+		> li > a {
+			border-top: 1px solid lighten($mobileNavBgndColor, 5%);
+		}
+	}
+
+
+}

@@ -1,0 +1,74 @@
+/*
+ ==========================================================================
+  $Logo
+ ==========================================================================
+ */
+
+// .node-type-logo .field-name-field-logo-web img {
+// 	@extend %responsiveImage;
+// 	margin: 10px 0;
+// }
+
+// Web Logos Block
+.block-views .view-logos .field-name-field-logo-web  {
+	
+	border: 1px solid $black;
+	padding: 20px;
+	background-color: $gray;
+	+ div {
+		margin-top: 20px;
+	}
+	.js-logo-url {
+		background-color: $white;
+		padding: 10px;
+		border: 1px solid darken($gray, 20%);
+	}
+}
+
+.view-display-id-panel_pane_1 {
+
+	ul {
+		@extend %listUnstyled;
+	}
+
+	// Container
+	.js-logo-snippet-wrapper {
+		background-color: $gray;
+		margin-bottom: 20px;
+		padding: 15px;
+		img {
+			@extend %responsiveImage;
+		}
+	}
+
+	.views-row > div {
+		+ div {
+			margin-top: 40px;
+		}
+		> span {
+			@include remFallback(font-size, 3);
+			@extend %block;
+			font-weight: $bold;
+			margin-bottom: 15px;
+		}
+		&.logo-svg img {
+			max-width: 400px;
+		}
+
+		.js-logo-snippet-content {
+			h2 {
+				font-size: 16px;
+				margin-bottom: 5px;
+			}
+			div {
+				background-color:$white;
+				font-family: $fontFamilyCode;
+				font-size: 14px;
+				padding: 15px;
+
+			}
+		}
+
+	}
+
+}

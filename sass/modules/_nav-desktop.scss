@@ -1,0 +1,148 @@
+/*
+ ==========================================================================
+  $Navigation Desktop
+ ==========================================================================
+ */
+
+/* Config
+   ===================================================================== */
+
+$navBgndColor: $brandPrimary; 		// Background Color
+$parentFontSize: 1.6;				// Parent Menu Font Size
+$expandFontSize: $parentFontSize;	// Sub Menu Font Size
+
+
+.region-navigation {
+	// Hide On Small Viewport
+	@include MQ(Smax) {
+		display: none;
+	}
+
+	@extend %clearFix;
+	@include contrasted($navBgndColor);
+	.content {
+		position: relative;
+
+		// Common
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: inherit;
+				position: relative;
+				line-height: 1.25;
+				&:hover > ul,
+				&.sfHover > ul {
+					display: block;
+				}
+			}
+			a,
+			.nolink {
+				@extend %unstyledLink;			
+				display: block;
+				position: relative;
+				zoom: 1; /* IE7 */
+			}
+		}
+
+		// Parent Links
+		> ul.menu {
+			$divider: 1px solid $white;
+			@extend %tableCenter;
+
+			border-left: $divider;
+			border-right: $divider;
+			> li {
+				float: left;
+				> *:first-child {
+					padding: 0.3125em 0.625em;
+					@include remFallback(font-size, $parentFontSize);
+					@include contrasted($navBgndColor);
+				}
+				+ li > *:first-child {
+					border-left: $divider;
+				}
+
+				// Add Project
+				&.add-project a {
+					@include addProject;
+				}
+
+				// Expanded Icons
+				&.expanded > *:first-child {
+					padding: 0.3125em 0.625em 0.3125em 1.875em;
+					@include icoMoon('chevron-down', after) {
+						position: absolute;
+						top: 50%;
+						left: 0.625em;
+						margin-top: -#{($parentFontSize*10)/2}px;
+					}
+				}
+				> ul.menu {
+					display: none;
+				}
+				&:hover > ul.menu {
+					display: block;
+				}			
+			}
+		}
+
+		// Production Menu
+		li.production {
+			position: static;
+
+			// Expanded Menu
+			> ul.menu {
+				position: absolute;
+				background-color: darken($navBgndColor, 20%);
+				top: 100%;
+				left: 50%;
+				z-index: 99;
+				width: 800px;
+				margin-left: -400px;
+				
+				//
+				> li {
+					float: left;
+					width: 25%;
+					padding: 20px;
+					> span.nolink {
+						display: block;
+						font-size: 14px;
+						text-transform: uppercase;
+						color: lighten($navBgndColor, 20%);
+						border-bottom: 1px solid lighten($navBgndColor, 10%);
+						padding-bottom: 5px;
+						margin-bottom: 5px;
+					}
+
+					//
+					> ul {
+						display: block!important;
+						a {
+							color: lighten($navBgndColor, 40%);
+							padding: 5px 0;
+							&:hover {
+								color: $white;
+							}
+						}
+						li + li a {
+							border-top: 1px solid darken($navBgndColor, 10%);
+						}
+					}
+				}
+			}
+		}		
+	}
+}
+
+// Active Link
+.page-user .region-navigation ul.menu li.my-projects a,
+.region-navigation .content ul.menu li a.active,
+.region-navigation .content ul.menu li span.active-trail,
+.region-navigation .content > ul.menu > li > *:first-child:hover {
+	@include contrasted(darken($navBgndColor, 20%));
+}

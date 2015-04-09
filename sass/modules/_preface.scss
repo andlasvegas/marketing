@@ -1,0 +1,24 @@
+/*
+ ==========================================================================
+  $Preface
+ ==========================================================================
+ */
+
+#preface {
+	// Username Block
+	#block-block-6 {
+		background-color: $brandPrimary;
+		.content {
+			color: $white;
+			margin: 0;
+			padding: 0 20px;
+			.current-user-name {
+				@include remFallback(font-size, 2.5);
+				font-weight: bold;
+			}
+		}
+	}
+	@include MQ(M) {
+		display: none;
+	}
+}

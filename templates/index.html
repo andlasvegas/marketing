@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>anDrupal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="../theme/css/style.css">
+    <link rel="stylesheet" media="print" href="../theme/css/print.css">
+    <script type="text/javascript" src="../theme/js/vendor/modernizr.min.js"></script>
+</head>
+
+<body>
+    <div id="page">
+        <div id="wrapper">
+            
+            <header id="header-wrapper">
+                <div class="container">
+                    <div class="content">
+                        <a id="site-logo">
+                            <img src="../logo.png" alt="">
+                        </a> <!-- /Site Logo -->
+                        <h1 id="site-name">anDrupal</h1><!-- /Site Name -->
+                </div><!-- /Container -->
+                    </div><!-- /.Content -->
+            </header><!-- /Header Wrapper -->
+            
+
+            <nav id="navigation" class="region-navigation">
+                <div class="block sfmenu block-menu">
+                    <div class="content">
+                        <ul class="menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="expanded">
+                                <a href="#">Link 1</a>
+                                <ul class="menu">
+                                    <li class="expanded">
+                                        <a href="#">Level 1</a>
+                                        <ul class="menu">
+                                            <li class="expanded">
+                                                <a href="#">Level 2</a>
+                                                <ul class="menu">
+                                                    <li><a href="/#">Level 3</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Link</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Link 3</a>
+                            </li>
+                        </ul><!-- /Menu -->
+                    </div><!-- /Content -->
+                </div><!-- /Block -->
+            </nav><!-- /Nav -->
+            
+
+            <div id="main">
+                <div class="container">
+                    <div id="main-content">
+                        <h1 id="page-title">HTML Ipsum Presents</h1><!-- /Page Title -->
+                        <div id="content">
+                            <div class="block">
+                                <div class="content">
+                                    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+                                    <h2>Header Level 2</h2>
+
+                                    <ol>
+                                        <li><a href="http://www.drupal.org">Lorem ipsum dolor sit amet</a>, consectetuer adipiscing elit.</li>
+                                        <li>Aliquam tincidunt mauris eu risus.</li>
+                                    </ol>
+
+                                    <blockquote>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+                                    </blockquote>
+
+                                    <h3>Header Level 3</h3>
+
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                        <li>Aliquam tincidunt mauris eu risus.</li>
+                                    </ul>                                    
+                                </div><!-- /.Content -->
+                            </div><!-- /.Block -->
+                        </div><!-- /Content -->
+                    </div><!-- /Main Content -->
+                </div><!-- .Container -->
+            </div><!-- /Main -->
+
+            <div id="footer">
+                <div class="container">
+                    <div class="block">
+                        <div class="content">
+                            Footer
+                        </div><!-- /.Content -->
+                </div><!-- /.Container -->
+                    </div><!-- /.Block -->
+            </div><!-- /Footer -->
+
+            <div class="mobile-nav-controls">
+                <span class="mobile-nav-toggle">Menu</span>
+                <span class="mobile-nav-overlay"></span>
+            </div><!-- /Mobile Nav Controls -->
+
+        </div><!-- /Wrapper -->
+
+        <div id="mobile-nav">
+            <div class="block">
+                <div class="content">
+                    Clone Menu
+                </div><!-- /.Content -->
+            </div><!-- /.Block -->
+        </div><!-- /.Mobile Nav -->
+
+    </div><!-- /Page -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="../theme/js/scripts.min.js"></script>
+    <script type="text/javascript">
+        $('.mobile-nav .content').html($('#navigation .content').html());
+    </script>
+    <div id="viewport-width"></div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+/*
+ ==========================================================================
+  $Base
+ ==========================================================================
+ */
+
+// Form
+form {
+	input {
+		width: auto;
+		max-width: 100%;
+	}
+	> div > fieldset.form-wrapper {
+		border: 3px solid $black;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+	span.fieldset-legend {
+		font-size: 20px;
+		font-weight: bold;
+		padding: 0 15px;
+	}
+	tr.even .form-item,
+	tr.odd .form-item {		
+		white-space: normal;
+	}
+}
+
+.field-type-field-collection table.field-multiple-table {
+	border: 3px solid $black;
+	thead th {
+		padding: 5px 20px;
+		font-size: 20px;
+	}
+	tbody td.field-multiple-drag + td {
+		padding: 20px;
+	}
+}
+
+// Table
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+	tr {
+		background-color: transparent!important;
+		border: 1px solid #CCCCCC!important;
+	}
+	th, td {
+		padding: 5px;
+		border: none;
+		font-weight: $normal;
+		vertical-align: top;
+	}
+}
+

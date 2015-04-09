@@ -1,0 +1,34 @@
+/*
+ ==========================================================================
+  $Admin
+ ==========================================================================
+ */
+
+/*
+ * Window Width Theming
+ * Displays current window with
+ */
+#viewport-width {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1;
+	color: $white;
+	@include rgbaBgndColor($black, .8);
+	z-index: 9999;
+}
+
+/*
+ * Admin Menu Module
+ * Disable on small viewports
+ */
+@include MQ(Smax) {
+	#admin-menu {
+		display: none;
+	}
+	body.admin-menu {
+		margin-top: 0 !important;
+	}
+}

@@ -1,0 +1,127 @@
+/*
+ ==========================================================================
+  $Placeholders
+ ==========================================================================
+ */
+
+/* Layout
+   ===================================================================== */
+
+// Display Block
+%block {
+	display:block;
+}
+
+// Display None;
+%none {
+	display:none;
+}
+
+// Display Inline-Block
+%blockInline {
+	display: inline-block;
+}
+
+// Center Horizontal
+%tableCenter {
+	display: table;
+	margin: 0 auto;
+}
+
+/* Utilities
+   ===================================================================== */
+
+// Clearfix
+ %clearFix {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Hide Text
+%hideText {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+// Unstyled Link
+%unstyledLink {
+	color: inherit;
+	text-decoration: inherit;
+	cursor: inherit;
+	&:active, &:focus {
+		outline: none;
+	}
+}
+
+/* Media
+   ===================================================================== */
+
+// Responsive Images
+%responsiveImage {
+	max-width: 100%;
+	height: auto;
+}
+
+/*
+ * Responsive Media
+ * http://avexdesigns.com/responsive-youtube-embed/#sthash.95sw05pl.dpuf
+ */
+%responsiveMedia {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+	iframe,
+	object,
+	embed {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+}
+
+/* Lists
+   ===================================================================== */
+
+// Unstyled List
+%listUnstyled {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	list-style-type: none;
+	li {
+		margin: inherit;
+		padding: inherit;
+		list-style: inherit;
+		list-style-type: inherit;
+		list-style-image: none;
+	}
+}
+
+// Inline List
+%listInline {
+	> li {
+		display: inline;
+	}
+}
+
+/*
+ * Horizontal Centered List
+ */
+%listHorizontalCenter {
+	display: table;
+	margin: 0 auto;
+	> li {
+		float: left;
+	}
+}
